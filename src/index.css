@@ -1,0 +1,89 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom glow backdrops reminiscent of the cryOS dark theme */
+.bg-glow-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(9, 13, 22, 0) 70%);
+}
+
+.bg-glow-pink {
+  background: radial-gradient(circle at 80% 20%, rgba(244, 114, 182, 0.1) 0%, rgba(9, 13, 22, 0) 60%);
+}
+
+/* 3D Tactile Button styling */
+.btn-3d-pink {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 #be185d;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-3d-pink:active {
+  transform: translateY(0);
+  box-shadow: 0 0px 0 #be185d;
+}
+
+.btn-3d-blue {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 #1d4ed8;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-3d-blue:active {
+  transform: translateY(0);
+  box-shadow: 0 0px 0 #1d4ed8;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Drifting clouds base animation */
+@keyframes cloudDrift {
+  0% {
+    transform: translateX(105vw);
+  }
+  100% {
+    transform: translateX(-25vw);
+  }
+}
+
+/* Sequential Hand-Drawn Sketch Animation */
+@keyframes sketchDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInFill {
+  to {
+    opacity: 0.18;
+  }
+}
+
+.doodle-stroke {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: sketchDraw 2.4s ease-in-out forwards;
+}
+
+.doodle-fill {
+  opacity: 0;
+  animation: fadeInFill 1.8s ease-in-out forwards;
+}
