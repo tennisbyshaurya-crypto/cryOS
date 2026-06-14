@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-glow-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(9, 13, 22, 0) 70%);
+}
+
+.bg-glow-pink {
+  background: radial-gradient(circle at 80% 20%, rgba(244, 114, 182, 0.1) 0%, rgba(9, 13, 22, 0) 60%);
+}
+
+.btn-3d-pink {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 #be185d;
+  transition: all 0.1s ease-in-out;
+}
+.btn-3d-pink:active {
+  transform: translateY(0);
+  box-shadow: 0 0px 0 #be185d;
+}
+
+.btn-3d-blue {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 #1d4ed8;
+  transition: all 0.1s ease-in-out;
+}
+.btn-3d-blue:active {
+  transform: translateY(0);
+  box-shadow: 0 0px 0 #1d4ed8;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateX(105vw); }
+  100% { transform: translateX(-25vw); }
+}
+.animate-drift-slow { animation: cloudDrift 110s linear infinite; }
+.animate-drift-medium { animation: cloudDrift 75s linear infinite; }
+.animate-drift-fast { animation: cloudDrift 42s linear infinite; }
+
+@keyframes sketchDraw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fadeInFill {
+  to { opacity: 0.18; }
+}
+.doodle-stroke {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: sketchDraw 2.4s ease-in-out forwards;
+}
+.doodle-fill {
+  opacity: 0;
+  animation: fadeInFill 1.8s ease-in-out forwards;
+}
+
+@keyframes spherical-sweep { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+.animate-spherical-sweep { animation: 20s linear infinite spherical-sweep; }
+
+@keyframes high-frequency-shimmer {
+  0%, 100% { transform: scale(1) translate(0); }
+  25% { transform: scale(1.015) translate(-0.6px, 0.4px); }
+  50% { transform: scale(1.025) translate(0.6px, -0.4px); }
+  75% { transform: scale(1.015) translate(-0.4px, 0.4px); }
+}
+.animate-shimmer-pain { animation: 1.6s ease-in-out infinite high-frequency-shimmer; }
+
+@keyframes wobble-discomfort {
+  0%, 100% { transform: rotate(0) scale(1); }
+  25% { transform: rotate(-3deg) scale(1.02); }
+  50% { transform: rotate(2deg) scale(0.99); }
+  75% { transform: rotate(-1.5deg) scale(1.03); }
+}
+.animate-wobble-discomfort { animation: 1.5s ease-in-out infinite wobble-discomfort; }
+
+@keyframes deep-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+.animate-deep-breathe { animation: 4s ease-in-out infinite deep-breathe; }
+
+@keyframes hungry-pulse {
+  0%, 100% { transform: scale(0.98); }
+  25% { transform: scale(1.06); }
+  45% { transform: scale(1.01); }
+  60% { transform: scale(1.08); }
+}
+.animate-hungry-pulse { animation: 1.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite hungry-pulse; }
+
+@keyframes sleepy-drift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(0.98); } }
+.animate-sleepy-drift { animation: 6s ease-in-out infinite sleepy-drift; }
+
+@keyframes sleep-stars {
+  0% { opacity: 0.4; transform: rotate(0); }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; transform: rotate(360deg); }
+}
+.animate-sleep-stars { animation: 12s linear infinite sleep-stars; }
+
+@keyframes floating-z {
+  0% { opacity: 0; transform: translate(0) scale(0.6); }
+  25% { opacity: 1; }
+  75% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(32px, -60px) scale(1.1); }
+}
+.animate-floating-z-1 { animation: 4s ease-in-out infinite floating-z; }
+.animate-floating-z-2 { animation: 4s ease-in-out 1.3s infinite floating-z; }
+.animate-floating-z-3 { animation: 4s ease-in-out 2.6s infinite floating-z; }
+
+@keyframes q-bob { 0%, 100% { opacity: 0.7; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+.animate-q-bob { animation: 2.5s ease-in-out infinite q-bob; }
+
+@keyframes led-ripple {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.45); }
+}
+.animate-led-ripple { animation: 2s cubic-bezier(0.16, 1, 0.3, 1) infinite led-ripple; }
+.animate-led-ripple-delayed { animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite led-ripple; }
+
+@keyframes digital-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  93%, 97% { transform: scaleY(0.08); }
+}
+.animate-digital-blink { animation: 4.5s ease-in-out infinite digital-blink; }
+
+@keyframes particle-fade-float {
+  0% { opacity: 0; transform: translate(0) scale(0.4) rotate(0); }
+  15% { opacity: 1; }
+  100% { transform: translate(var(--x, 40px), var(--y, -60px)) scale(1.1) rotate(var(--rot, 45deg)); opacity: 0; }
+}
+.animate-particle { animation: 1.4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards particle-fade-float; }
+
+@keyframes scanning-pulse {
+  0%, 100% { opacity: 0.15; transform: scaleY(1); }
+  50% { opacity: 0.45; transform: scaleY(1.05); }
+}
+.animate-scanning { animation: 2s ease-in-out infinite scanning-pulse; }
+
+@keyframes react-calm {
+  0% { transform: scale(1) translateY(0); }
+  30% { transform: scale(1.1) translateY(-10px); }
+  55% { transform: scale(0.96) translateY(4px); }
+  75% { transform: scale(1.04) translateY(-3px); }
+  100% { transform: scale(1) translateY(0); }
+}
+.animate-react-calm { animation: 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) react-calm; }
+
+@keyframes react-hungry {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.16) translateY(-4px); }
+  70% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.animate-react-hungry { animation: 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) react-hungry; }
+
+@keyframes react-pain {
+  0%, 100% { transform: translate(0) rotate(0); }
+  20% { transform: translate(-3px) rotate(-1deg); }
+  40% { transform: translate(3px) rotate(1deg); }
+  60% { transform: translate(-2px) rotate(-0.5deg); }
+  80% { transform: translate(2px) rotate(0.5deg); }
+}
+.animate-react-pain { animation: 0.7s ease-in-out react-pain; }
+
+@keyframes react-tired {
+  0% { transform: rotate(0) translateY(0); }
+  40% { transform: rotate(8deg) translateY(8px) scale(0.98); }
+  70% { transform: rotate(4deg) translateY(4px); }
+  100% { transform: rotate(0) translateY(0); }
+}
+.animate-react-tired { animation: 0.9s cubic-bezier(0.4, 0, 0.4, 1) react-tired; }
+
+@keyframes react-discomfort {
+  0%, 100% { transform: rotate(0) scale(1); }
+  15% { transform: rotate(-4deg) scale(1.02); }
+  30% { transform: rotate(3deg) scale(0.99); }
+  45% { transform: rotate(-3deg) scale(1.01); }
+  60% { transform: rotate(2deg); }
+  80% { transform: rotate(-1deg); }
+}
+.animate-react-discomfort { animation: 0.7s ease-in-out react-discomfort; }
